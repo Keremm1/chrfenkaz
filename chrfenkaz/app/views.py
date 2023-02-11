@@ -7,7 +7,7 @@ class RegisterView(View):
     def post(self, request):
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = User.objects.create_user(username=username, password=password)
+        user = User.objects.create_user(username=username, password=password, email="default@gmail.com")
         user.save()
 
 class LoginView(View):
